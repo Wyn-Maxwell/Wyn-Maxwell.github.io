@@ -17,14 +17,21 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+      <categories>
+        <category>技术文档</category>
+      </categories>
       <tags>
         <tag>hello world</tag>
       </tags>
   </entry>
   <entry>
     <title>测试文档</title>
-    <url>/2020/05/06/text-md/</url>
-    <content><![CDATA[]]></content>
+    <url>/2020/05/05/text-md/</url>
+    <content><![CDATA[<p>啥事</p>
+<h2 id="aaaaaaaaaaaaaaa"><a href="#aaaaaaaaaaaaaaa" class="headerlink" title="aaaaaaaaaaaaaaa"></a>aaaaaaaaaaaaaaa</h2>]]></content>
+      <categories>
+        <category>测试文档</category>
+      </categories>
       <tags>
         <tag>Testing</tag>
       </tags>
