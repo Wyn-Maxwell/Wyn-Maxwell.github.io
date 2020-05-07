@@ -1,41 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Flutter Native混合开发（一）——Flutter基础</title>
-    <url>/2020/05/07/Flutter%20Native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94Flutter%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="Flutter-Native混合开发（一）——Flutter基础"><a href="#Flutter-Native混合开发（一）——Flutter基础" class="headerlink" title="Flutter Native混合开发（一）——Flutter基础"></a>Flutter Native混合开发（一）——Flutter基础</h1><h2 id="1、Flutter是什么"><a href="#1、Flutter是什么" class="headerlink" title="1、Flutter是什么"></a>1、Flutter是什么</h2><p>Flutter是一款移动应用程序SDK，一份代码可以同时生成iOS和Android两个高性能、高保真的应用程序。Flutter工程使用极其容易上手的Dart代码编写，由于其独特的引擎，Flutter可以直接调用硬件，没有中间商赚差价的高效运行。</p>
-<h2 id="2、Flutter的UI组件"><a href="#2、Flutter的UI组件" class="headerlink" title="2、Flutter的UI组件"></a>2、Flutter的UI组件</h2><p>如同安卓开发中，所有界面都由View组成，Flutter中一切UI都由Widget组成。由Widget的层层堆叠合成UI，Widget生命周期一直延续到setState()调用，UI更新时，此时Flutter框架会重绘整个页面的Widget。</p>
-<p>一些Widget，如图片、文字等不会与用户交互的组件，继承自StatelessWidget类，他们在UI更新时会随着Widget树的重绘而重建，但是不会有状态信息的更新过程。如按钮和列表等需要信息更新和与用户交互的组件继承自StatefulWidget类，它包含一个跨生命周期的状态State类可以存储和更新信息。</p>
-<p>虽然他们分属不同的类，但是在开发过程中我们仍然可以在组合过程中使用StatelessWidget充当父组件，有需要交互和更新的子组件再使用StatefulWidget，从而提高效率。<br><img src="https://img-blog.csdnimg.cn/20200507104249577.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d5bl90ZXN0,size_10,color_FFFFFF,t_70#pic_center" alt="UI组件结构图"></p>
-<h2 id="3、Flutter框架"><a href="#3、Flutter框架" class="headerlink" title="3、Flutter框架"></a>3、Flutter框架</h2><p><img src="https://img-blog.csdnimg.cn/20200507104359596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d5bl90ZXN0,size_16,color_FFFFFF,t_70#pic_center" alt="Flutter框架图"></p>
-<p>该图显示了框架的上层，这个设计的目标是帮助你用更少的代码做更多的事情。例如，Material层是通过组合来自Widget层的基本Widget来构建的， 并且Widgets层本身是通过较低级对象渲染层构建的。</p>
-<p>Framework层为构建应用程序提供了许多选项。选择一种自定义的方法来释放框架的全部表现力，或者使用构件层中的构建块，或混合搭配。 您可以实现Flutter提供的所有现成的Widget，或者使用Flutter团队用于构建框架的相同工具和技术创建您自己的定制Widget。</p>
-<p>Flutter Engine是一个纯 C++实现的框架层，它包含了 Skia引擎（高性能渲染引擎）、Dart运行时、文字排版引擎等。它可以以 JIT、JIT Snapshot 或者 AOT(预先编译)的模式运行 Dart代码。AOT直接将Dart源码编译成了本地字节码，没有了解释执行的过程，提升执行性能。和Java显著不同的是Dart的线程(Isolate)是不共享内存的，各自的堆(Heap)和栈(Stack)都是隔离的，彼此之间通过消息通道来通信。所以，Dart不存在数据竞争和变量状态同步的问题，整个Flutter Framework Widget的渲染过程都运行在一个Isolate中，在代码调用 Dart UI库时，提供 Dart UI库中 Native Binding 实现。</p>
-<h2 id="4、Flutter开发示例"><a href="#4、Flutter开发示例" class="headerlink" title="4、Flutter开发示例"></a>4、Flutter开发示例</h2><p>推荐入门文档：</p>
-<ul>
-<li><p>《编写您的第一个Flutter APP》</p>
-<ul>
-<li><a href="https://flutterchina.club/get-started/codelab/" target="_blank" rel="noopener">译文</a></li>
-<li><a href="https://flutter.dev/docs/get-started/codelab" target="_blank" rel="noopener">原版</a></li>
-</ul>
-</li>
-<li><p>《Flutter for Android开发者》</p>
-<ul>
-<li><a href="https://flutterchina.club/flutter-for-android/" target="_blank" rel="noopener">译文</a></li>
-<li><a href="https://flutter.dev/docs/get-started/flutter-for/android-devs" target="_blank" rel="noopener">原版</a></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术文档</category>
-      </categories>
-      <tags>
-        <tag>Flutter</tag>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Flutter Native混合开发（三）——Flutter与Native通讯</title>
     <url>/2020/05/07/Flutter%20Native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94Flutter%E4%B8%8ENative%E9%80%9A%E8%AE%AF/</url>
     <content><![CDATA[<h1 id="Flutter-Native混合开发（三）——Flutter与Native通讯"><a href="#Flutter-Native混合开发（三）——Flutter与Native通讯" class="headerlink" title="Flutter Native混合开发（三）——Flutter与Native通讯"></a>Flutter Native混合开发（三）——Flutter与Native通讯</h1><h2 id="1、通讯机制简述"><a href="#1、通讯机制简述" class="headerlink" title="1、通讯机制简述"></a>1、通讯机制简述</h2><p>消息使用Channel(平台通道)在Native和Dart之间传递。</p>
@@ -85,6 +50,41 @@ try {
         }
     }];
 }</code></pre>]]></content>
+      <categories>
+        <category>技术文档</category>
+      </categories>
+      <tags>
+        <tag>Flutter</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Flutter Native混合开发（一）——Flutter基础</title>
+    <url>/2020/05/07/Flutter%20Native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94Flutter%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="Flutter-Native混合开发（一）——Flutter基础"><a href="#Flutter-Native混合开发（一）——Flutter基础" class="headerlink" title="Flutter Native混合开发（一）——Flutter基础"></a>Flutter Native混合开发（一）——Flutter基础</h1><h2 id="1、Flutter是什么"><a href="#1、Flutter是什么" class="headerlink" title="1、Flutter是什么"></a>1、Flutter是什么</h2><p>Flutter是一款移动应用程序SDK，一份代码可以同时生成iOS和Android两个高性能、高保真的应用程序。Flutter工程使用极其容易上手的Dart代码编写，由于其独特的引擎，Flutter可以直接调用硬件，没有中间商赚差价的高效运行。</p>
+<h2 id="2、Flutter的UI组件"><a href="#2、Flutter的UI组件" class="headerlink" title="2、Flutter的UI组件"></a>2、Flutter的UI组件</h2><p>如同安卓开发中，所有界面都由View组成，Flutter中一切UI都由Widget组成。由Widget的层层堆叠合成UI，Widget生命周期一直延续到setState()调用，UI更新时，此时Flutter框架会重绘整个页面的Widget。</p>
+<p>一些Widget，如图片、文字等不会与用户交互的组件，继承自StatelessWidget类，他们在UI更新时会随着Widget树的重绘而重建，但是不会有状态信息的更新过程。如按钮和列表等需要信息更新和与用户交互的组件继承自StatefulWidget类，它包含一个跨生命周期的状态State类可以存储和更新信息。</p>
+<p>虽然他们分属不同的类，但是在开发过程中我们仍然可以在组合过程中使用StatelessWidget充当父组件，有需要交互和更新的子组件再使用StatefulWidget，从而提高效率。<br><img src="https://img-blog.csdnimg.cn/20200507104249577.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d5bl90ZXN0,size_10,color_FFFFFF,t_70#pic_center" alt="UI组件结构图"></p>
+<h2 id="3、Flutter框架"><a href="#3、Flutter框架" class="headerlink" title="3、Flutter框架"></a>3、Flutter框架</h2><p><img src="https://img-blog.csdnimg.cn/20200507104359596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d5bl90ZXN0,size_16,color_FFFFFF,t_70#pic_center" alt="Flutter框架图"></p>
+<p>该图显示了框架的上层，这个设计的目标是帮助你用更少的代码做更多的事情。例如，Material层是通过组合来自Widget层的基本Widget来构建的， 并且Widgets层本身是通过较低级对象渲染层构建的。</p>
+<p>Framework层为构建应用程序提供了许多选项。选择一种自定义的方法来释放框架的全部表现力，或者使用构件层中的构建块，或混合搭配。 您可以实现Flutter提供的所有现成的Widget，或者使用Flutter团队用于构建框架的相同工具和技术创建您自己的定制Widget。</p>
+<p>Flutter Engine是一个纯 C++实现的框架层，它包含了 Skia引擎（高性能渲染引擎）、Dart运行时、文字排版引擎等。它可以以 JIT、JIT Snapshot 或者 AOT(预先编译)的模式运行 Dart代码。AOT直接将Dart源码编译成了本地字节码，没有了解释执行的过程，提升执行性能。和Java显著不同的是Dart的线程(Isolate)是不共享内存的，各自的堆(Heap)和栈(Stack)都是隔离的，彼此之间通过消息通道来通信。所以，Dart不存在数据竞争和变量状态同步的问题，整个Flutter Framework Widget的渲染过程都运行在一个Isolate中，在代码调用 Dart UI库时，提供 Dart UI库中 Native Binding 实现。</p>
+<h2 id="4、Flutter开发示例"><a href="#4、Flutter开发示例" class="headerlink" title="4、Flutter开发示例"></a>4、Flutter开发示例</h2><p>推荐入门文档：</p>
+<ul>
+<li><p>《编写您的第一个Flutter APP》</p>
+<ul>
+<li><a href="https://flutterchina.club/get-started/codelab/" target="_blank" rel="noopener">译文</a></li>
+<li><a href="https://flutter.dev/docs/get-started/codelab" target="_blank" rel="noopener">原版</a></li>
+</ul>
+</li>
+<li><p>《Flutter for Android开发者》</p>
+<ul>
+<li><a href="https://flutterchina.club/flutter-for-android/" target="_blank" rel="noopener">译文</a></li>
+<li><a href="https://flutter.dev/docs/get-started/flutter-for/android-devs" target="_blank" rel="noopener">原版</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>技术文档</category>
       </categories>
