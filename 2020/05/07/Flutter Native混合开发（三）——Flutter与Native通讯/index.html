@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Flutter,Android," />
 
 
 
@@ -123,16 +123,20 @@
 
 
 
-<meta name="description" content="L2Dwidget.init({&quot;pluginRootPath&quot;:&quot;live2dw&#x2F;&quot;,&quot;pluginJsPath&quot;:&quot;lib&#x2F;&quot;,&quot;pluginModelPath&quot;:&quot;assets&#x2F;&quot;,&quot;tagMode&quot;:false,&quot;model&quot;:{&quot;jsonPath&quot;:&quot;&#x2F;live2dw&#x2F;assets&#x2F;hijiki.model.json&quot;},&quot;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="砸瓦鲁多">
-<meta property="og:url" content="http://arwynwang.github.io/404/index.html">
+<meta name="description" content="Flutter Native混合开发（三）——Flutter与Native通讯1、通讯机制简述消息使用Channel(平台通道)在Native和Dart之间传递。 Flutter定义了三种不同类型的Channel：  BasicMessageChannel：用于传递字符串和半结构化的信息，持续通信，收到消息后可以回复此次消息。例如：Native将遍历到的文件信息陆续传递到Dart；Flutter将">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter Native混合开发（三）——Flutter与Native通讯">
+<meta property="og:url" content="http://arwynwang.github.io/2020/05/07/Flutter%20Native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94Flutter%E4%B8%8ENative%E9%80%9A%E8%AE%AF/index.html">
 <meta property="og:site_name" content="砸瓦鲁多">
-<meta property="og:description" content="L2Dwidget.init({&quot;pluginRootPath&quot;:&quot;live2dw&#x2F;&quot;,&quot;pluginJsPath&quot;:&quot;lib&#x2F;&quot;,&quot;pluginModelPath&quot;:&quot;assets&#x2F;&quot;,&quot;tagMode&quot;:false,&quot;model&quot;:{&quot;jsonPath&quot;:&quot;&#x2F;live2dw&#x2F;assets&#x2F;hijiki.model.json&quot;},&quot;">
-<meta property="article:published_time" content="2020-05-06T16:43:05.787Z">
-<meta property="article:modified_time" content="2020-05-06T16:43:05.787Z">
+<meta property="og:description" content="Flutter Native混合开发（三）——Flutter与Native通讯1、通讯机制简述消息使用Channel(平台通道)在Native和Dart之间传递。 Flutter定义了三种不同类型的Channel：  BasicMessageChannel：用于传递字符串和半结构化的信息，持续通信，收到消息后可以回复此次消息。例如：Native将遍历到的文件信息陆续传递到Dart；Flutter将">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200507135953945.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d5bl90ZXN0,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-05-07T04:44:29.000Z">
+<meta property="article:modified_time" content="2020-05-07T11:05:07.418Z">
 <meta property="article:author" content="王一楠">
+<meta property="article:tag" content="Flutter">
+<meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200507135953945.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d5bl90ZXN0,size_16,color_FFFFFF,t_70#pic_center">
 
 
 
@@ -162,13 +166,13 @@
 
 
 
-  <link rel="canonical" href="http://arwynwang.github.io/404/"/>
+  <link rel="canonical" href="http://arwynwang.github.io/2020/05/07/Flutter Native混合开发（三）——Flutter与Native通讯/"/>
 
 
 
 
 
-  <title> | 砸瓦鲁多</title>
+  <title>Flutter Native混合开发（三）——Flutter与Native通讯 | 砸瓦鲁多</title>
   
 
 
@@ -178,7 +182,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -307,50 +311,257 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://arwynwang.github.io/2020/05/07/Flutter%20Native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94Flutter%E4%B8%8ENative%E9%80%9A%E8%AE%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王一楠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="砸瓦鲁多">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <!DOCTYPE HTML>
-<html>
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8;"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="robots" content="all" />
-  <meta name="robots" content="index,follow"/>
-  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
-<meta name="generator" content="Hexo 4.2.0"></head>
-<body>
-  <script type="text/plain" src="http://www.qq.com/404/search_children.js"
-          charset="utf-8" homePageUrl="/"
-          homePageName="回到我的主页">
-  </script>
-  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
-  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
-</html>
+          <h1 class="post-title" itemprop="name headline">Flutter Native混合开发（三）——Flutter与Native通讯</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-07T12:44:29+08:00">
+                2020-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">技术文档</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/07/Flutter%20Native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94Flutter%E4%B8%8ENative%E9%80%9A%E8%AE%AF/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2020/05/07/Flutter%20Native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E2%80%94Flutter%E4%B8%8ENative%E9%80%9A%E8%AE%AF/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="Flutter-Native混合开发（三）——Flutter与Native通讯"><a href="#Flutter-Native混合开发（三）——Flutter与Native通讯" class="headerlink" title="Flutter Native混合开发（三）——Flutter与Native通讯"></a>Flutter Native混合开发（三）——Flutter与Native通讯</h1><h2 id="1、通讯机制简述"><a href="#1、通讯机制简述" class="headerlink" title="1、通讯机制简述"></a>1、通讯机制简述</h2><p>消息使用Channel(平台通道)在Native和Dart之间传递。</p>
+<p>Flutter定义了三种不同类型的Channel：</p>
+<ul>
+<li>BasicMessageChannel：<br>用于传递字符串和半结构化的信息，持续通信，收到消息后可以回复此次消息。例如：Native将遍历到的文件信息陆续传递到Dart；Flutter将服务端获取的数据交给Native加工，Native处理完之后返回。</li>
+<li>MethodChannel：<br>用于传递方法调用，一次性通信。例如：Flutter调用Native拍照。</li>
+<li>EventChannel：<br>用于数据流的通信，持续通信，收到消息后无法回复此次消息，通常用于Native向Dart的通信。例如：手机电量变化，网络连接变化，陀螺仪，传感器等。</li>
+</ul>
+<p>这三种类型的Channel都是全双工通信，即A &lt;=&gt; B，Dart可以主动发送消息到Native端，并且Native接收消息后可以做出回应。同样地，Native端也可以主动发送消息到Dart端，Dart端接受消息后返回给Native端。<br><img src="https://img-blog.csdnimg.cn/20200507135953945.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d5bl90ZXN0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>下面说明MethodChannel实现的方式。</p>
+<h2 id="2、Native到Dart的通信"><a href="#2、Native到Dart的通信" class="headerlink" title="2、Native到Dart的通信"></a>2、Native到Dart的通信</h2><p>Native端代码，需定义FlutterEngine，并且使用</p>
+<pre><code>new MethodChannel(flutterEngine.getDartExecutor(), &quot;flutter.example.com/native&quot;).setMethodCallHandler(new MethodChannel.MethodCallHandler() {
+    @Override
+    public void onMethodCall(MethodCall call, MethodChannel.Result result) {
+        if (call.method.equals(&quot;jumpSettings&quot;)) {
+            try {
+                // 实现功能
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        } else {
+            result.notImplemented();
+        }
+    }
+});</code></pre><p>Dart端代码，须使用async关键词，新建线程异步执行。</p>
+<pre><code>static const platform = const MethodChannel(&quot;flutter.example.com/native&quot;);
+…
+async {
+    await platform.invokeMethod(&quot;jumpSettings&quot;);
+}</code></pre><h2 id="3、Dart到Native的通信"><a href="#3、Dart到Native的通信" class="headerlink" title="3、Dart到Native的通信"></a>3、Dart到Native的通信</h2><p>MethodChannel 来实现。</p>
+<p>Dart端代码：</p>
+<pre><code>String response;
+try {
+    //使用BasicMessageChannel向Native发送消息，并接受Native的回复
+    response = await _methodChannelPlugin.invokeMethod(&apos;send&apos;, value);
+} on PlatformException catch (e) {
+    print(e);
+}</code></pre><p>Native端代码：</p>
+<pre><code>(void)initMethodChannel{
+    self.methodChannel = [FlutterMethodChannel methodChannelWithName:@&quot;MethodChannelPlugin&quot; binaryMessenger:self.flutterViewController];
+    __weak typeof(self)weakSelf = self;
+    [self.methodChannel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
+        if ([@&quot;send&quot; isEqualToString:call.method]) {
+            result([NSString stringWithFormat:@&quot;MethodChannelPlugin收到：%@&quot;,call.arguments]);//返回结果给Dart);
+            [weakSelf sendShow:call.arguments];
+        }
+    }];
+}</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="王一楠 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="王一楠 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Flutter/" rel="tag"><i class="fa fa-tag"></i> Flutter</a>
+          
+            <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/07/Flutter%20Native%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91/" rel="next" title="Flutter Native混合开发（二）——混合开发">
+                <i class="fa fa-chevron-left"></i> Flutter Native混合开发（二）——混合开发
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -390,8 +601,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -489,6 +709,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flutter-Native混合开发（三）——Flutter与Native通讯"><span class="nav-number">1.</span> <span class="nav-text">Flutter Native混合开发（三）——Flutter与Native通讯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、通讯机制简述"><span class="nav-number">1.1.</span> <span class="nav-text">1、通讯机制简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Native到Dart的通信"><span class="nav-number">1.2.</span> <span class="nav-text">2、Native到Dart的通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Dart到Native的通信"><span class="nav-number">1.3.</span> <span class="nav-text">3、Dart到Native的通信</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
